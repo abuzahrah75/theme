@@ -1,23 +1,57 @@
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-    <title>{% block tajuk %} abuzahrah2022 {% endblock tajuk %}</title>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta http-equiv="X-UA-Compatible" content="ie=edge">
-		{% comment %} {% tailwind_css %} {% endcomment %}
-        <script src="https://cdn.tailwindcss.com/"></script>
-        {% block extrahead %} {% endblock extrahead %}
-	</head>
-
 	<body class="bg-gray-50 font-serif leading-normal tracking-normal">
 		<div class="container mx-auto">
-             {% include "core/components/header.html" %}
-             {% block content %} {% endblock content %}
+             
 			
 		</div>
-    <script src="{% static 'js/htmx.min.js' %}"></script>
-    {% block extrascript %} {% endblock extrascript %}
+    
+	</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>{% block tajuk %} abuzahrah2022 {% endblock tajuk %}</title>
+		<link rel="shortcut icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+		<link rel="stylesheet" href="{% static 'css/fontawesome.min.css' %}">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+		<!-- Bulma Version 0.9.0-->
+		<link rel="stylesheet" href="https://unpkg.com/bulma@0.9.0/css/bulma.min.css" />
+		<link rel="stylesheet" type="text/css" href="{% static 'css/forum.css' %}">
+        {% block extrahead %} {% endblock extrahead %}
+	</head>
+	<body>
+        {% include "core/components/header.html" %}
+        {% block content %} {% endblock content %}
+		
+		
+		<footer class="footer">
+			<div class="container">
+				<div class="content has-text-centered">
+					<div class="columns is-mobile is-centered">
+						<div class="field is-grouped is-grouped-multiline">
+							<div class="control">
+								<div class="tags has-addons">
+									<a class="tag is-link" href="https://github.com/BulmaTemplates/bulma-templates">Bulma Templates</a>
+									<span class="tag is-light">Daniel Supernault</span>
+								</div>
+							</div>
+							<div class="control">
+								<div class="tags has-addons">
+									<a class="tag is-link">The source code is licensed</a>
+									<span class="tag is-light">MIT &nbsp;<i class="fa fa-github"></i></span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<script async type="text/javascript" src="{% static 'js/bulma.js' %}""></script>
+        <script src="{% static 'js/htmx.min.js' %}"></script>
+        {% block extrascript %} {% endblock extrascript %}
 	</body>
 </html>
